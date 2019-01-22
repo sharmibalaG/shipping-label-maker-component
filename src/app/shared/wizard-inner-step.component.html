@@ -1,0 +1,176 @@
+<div class="progress">
+        <div  role="progressbar" aria-valuenow="70"
+         aria-valuemin="0" aria-valuemax="100" [ngClass]="{
+            'step1':title === 1,
+            'step2':title ===  2,
+            'step3':title === 3,
+            'step4':title === 4,
+            'step5':title === 5
+          }">
+          <span class="sr-only">{{title}}</span>
+        </div>
+</div>
+<div class="sender-info col-md-10"  *ngIf="(title == 1)">
+      <p class="note-message">Enter the Sender's Address </p>
+<form [formGroup]="senderForm" required>
+  
+        <div class="form-group">
+            <label>Name:</label>
+        <div class="inpu-block">
+            <input type="text" formControlName="firstName"  #name>    
+            <p class="error-message" *ngIf="senderForm.controls['firstName'].invalid && senderForm.controls['firstName'].touched" required >Please enter valid name</p>        
+        </div>
+        </div>   
+        <div class="form-group">  
+            <label> Street: </label>
+            <div class="inpu-block">
+            <input type="text" formControlName="streetName"  #street>
+            <p class="error-message" *ngIf="senderForm.controls['streetName'].invalid && senderForm.controls['streetName'].touched" required >Please enter valid city</p>        
+        </div>
+        </div>
+
+        <div class="form-group">  
+            <label> city:  </label>
+            <div class="inpu-block">
+            <input type="text" formControlName="cityName"  #city>
+            <p class="error-message" *ngIf="senderForm.controls['cityName'].invalid && senderForm.controls['cityName'].touched && senderForm.controls['cityName'].pristine" required > Please enter city</p>        
+        </div>
+        </div>
+
+        <div class="form-group"> 
+            <label> State:</label>
+            <div class="inpu-block">
+            <input type="text" formControlName="stateName"  #state>  
+            <p class="error-message" *ngIf="senderForm.controls['stateName'].invalid && senderForm.controls['stateName'].touched && senderForm.controls['stateName'].pristine" required > Please enter valid state name</p>        
+        </div>          
+        </div>
+          
+        <div class="form-group"> 
+            <label> Zip: </label>
+            <div class="inpu-block">
+            <input type="text" formControlName="ziptName"  #zip>
+            <p class="error-message" *ngIf="senderForm.controls['ziptName'].invalid && senderForm.controls['ziptName'].touched && senderForm.controls['ziptName'].pristine" required >Please enter valid zip code</p>        
+            </div>
+        </div>
+        <div class="button_block col-md-12">        
+              
+                <input class="btn btn-primary" type="button" value="Prev" (click)="onPrev()"/>
+                <input class="btn btn-primary" type="button" value="Next" [disabled]="senderForm.invalid" (click)="onNext(senderForm, reciverForm , weightForm, shippingForm)"/>
+        </div>
+</form>
+</div>
+
+<div class="reciver-info col-md-10" *ngIf="(title == 2)">
+    {{valid}}
+        <form [formGroup]="reciverForm">
+                <p class="note-message">Enter the Reciver's Address </p>
+            <div class="form-group">                     
+                        <label> Name: </label>
+                        <div class="inpu-block">
+                        <input type="text" formControlName="firstName">
+                        <p class="error-message" *ngIf="reciverForm.controls['firstName'].invalid && reciverForm.controls['firstName'].touched && reciverForm.controls['firstName'].pristine" required >Please enter valid name</p>        
+                    </div>
+            </div>               
+            <div class="form-group">        
+                    <label>  Street:  </label>
+                    <div class="inpu-block">
+                    <input type="text" formControlName="streetName">
+                    <p class="error-message" *ngIf="reciverForm.controls['streetName'].invalid && reciverForm.controls['streetName'].touched && reciverForm.controls['streetName'].pristine" required >Please enter valid name</p>        
+                    </div>
+            </div>
+
+            <div class="form-group"> 
+                <label>  city:  </label>
+                <div class="inpu-block">
+                <input type="text" formControlName="cityName">
+                <p class="error-message" *ngIf="reciverForm.controls['cityName'].invalid && reciverForm.controls['cityName'].touched && reciverForm.controls['cityName'].pristine" required >Please enter valid name</p>        
+            </div>
+             </div>
+
+             <div class="form-group"> 
+                    <label>   State:  </label>
+                    <div class="inpu-block">
+                    <input type="text" formControlName="stateName">
+                    <p class="error-message" *ngIf="reciverForm.controls['stateName'].invalid && reciverForm.controls['stateName'].touched && reciverForm.controls['stateName'].pristine" required >Please enter valid name</p>        
+                </div>
+            </div>
+               
+            <div class="form-group"> 
+                    <label>  Zip: </label>
+                    <div class="inpu-block">
+                    <input type="text" formControlName="ziptName">
+                    <p class="error-message" *ngIf="reciverForm.controls['ziptName'].invalid && reciverForm.controls['ziptName'].touched && reciverForm.controls['ziptName'].pristine" required >Please enter valid name</p>        
+                </div>
+            </div>
+            <div class="button_block col-md-12">        
+                   
+                    <input class="btn btn-primary" type="button" value="Prev" (click)="onPrev()"/>
+                    <input class="btn btn-primary" type="button" value="Next" [disabled]="reciverForm.invalid" (click)="onNext(senderForm, reciverForm , weightForm, shippingForm)"/>
+            </div>
+        </form>
+ </div>
+
+ <div class="wieight-info col-md-10" *ngIf="(title == 3)">
+        <form [formGroup]="weightForm">
+                <p class="note-message">Enter the weight </p>
+            <div class="form-group"> 
+                    <label> weight:  </label>  
+                    <div class="inpu-block">  
+                    <input type="text" formControlName="weightName">
+                    <p class="error-message" *ngIf="weightForm.controls['weightName'].invalid && weightForm.controls['weightName'].touched && weightForm.controls['weightName'].pristine" required >Please enter valid name</p>        
+                    </div>
+            </div>                      
+        </form>
+        <div class="button_block col-md-12">        
+                
+                <input class="btn btn-primary" type="button" value="Prev" (click)="onPrev()"/>
+                <input class="btn btn-primary" type="button" value="Next" [disabled]="weightForm.invalid" (click)="onNext(senderForm, reciverForm , weightForm, shippingForm)"/>
+        </div>
+</div>
+
+<div class="shiping-info col-md-10" *ngIf="(title == 4)">
+        <form [formGroup]="shippingForm">
+                <p class="note-message">Enter the shipping option </p>
+            <div class="form-group"> 
+                    <label>shipping Option: </label>  
+                    <div class="radio_grpup inpu-block">
+                        <input type="radio" formControlName="shippingName" value="Ground"> <label> Ground </label>
+                        <input type="radio" formControlName="shippingName" value="priority"> <label> Priority </label>
+                        <p class="error-message" *ngIf="shippingForm.controls['shippingName'].invalid && shippingForm.controls['shippingName'].touched && shippingForm.controls['shippingName'].pristine" required >Please enter valid name</p>        
+                    </div>
+            </div>                        
+        </form>
+        <div class="button_block col-md-6">        
+                
+                <input class="btn btn-primary" type="button" value="Prev" (click)="onPrev()"/>
+                <input class="btn btn-primary" type="button" value="Next" [disabled]="shippingForm.invalid" (click)="onNext(senderForm, reciverForm , weightForm, shippingForm)"/>
+        </div>
+</div>
+
+<div class="shiping-confirmation col-md-6" *ngIf="(title == 5)">
+        <p class="note-message">Sender Address</p>
+      <label> Name : {{this.shippingObject.from.name}}</label>
+      <label> Address : 
+       <p> {{this.shippingObject.from.street}} <br/> {{this.shippingObject.from.city}} <br/> {{this.shippingObject.from.state}} <br/> {{this.shippingObject.from.zip}}</p></label>
+       <p class="note-message">Receiver's Address</p>
+      <label> Name : {{this.shippingObject.to.name}}</label>
+      <label> Address : <p>  {{this.shippingObject.to.street}} <br/> {{this.shippingObject.to.city}} <br/> {{this.shippingObject.to.state}} <br/> {{this.shippingObject.to.zip}}</p></label>
+      <p class="note-message">weight</p>
+      <label>Weight: {{ this.shippingObject.weight }}</label>
+      <p class="note-message">Shipping Option</p>
+      <label>shipping Option: {{ this.shippingObject.shippingOption }}</label>
+      <label>shipping Cost: {{ shippingCost | currency}}</label>
+</div>
+
+<input class="btn btn-primary confirm" type="button" value="Confirm" *ngIf="(title == 5)" (click)="confirm()"/>
+
+
+
+    
+
+
+
+
+      
+
+

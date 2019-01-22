@@ -1,0 +1,100 @@
+.form-group {
+    width:100%;
+    margin: 15px;
+    float: left;
+}
+.form-group label {
+    width:15%;
+    float: left;
+}
+.form-group input {
+    width: 80%;
+    height: 37px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    float: left;
+}
+.button_block {
+    clear: both;
+    float: left;
+}
+.button_block input {
+    float: right;
+    margin: 0 10px;
+}
+.col-md-6 {
+    float: left;
+}
+.radio_grpup input {
+    width: auto !important;
+    height: auto !important;
+}
+.radio_grpup {
+    width: 70%;
+    float: left;
+}
+.radio_grpup label {
+    margin: 0 10px;
+}
+p.note-message {
+    color: #979797;
+    font-size: 14px;
+}
+.shiping-confirmation label{
+    width:100%;
+    float: left;
+}
+.progress .step1 {
+    width:0%;
+}
+.progress .step2 {
+    width:25%;
+}
+.progress .step3 {
+    width:50%;
+}
+.progress .step4 {
+    width:75%;
+}
+.progress .step5 {
+    width:100%;
+}
+.step1, .step2, .step3, .step4, .step5 {
+    float: left;
+    width: 0%;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.progress {
+    height: 15px !important;
+}
+.inpu-block {
+    float: left;
+    width: 84%;
+    position: relative;
+}
+.error-message {
+    float: left;
+    color: red;
+    clear: both;
+    margin: 2px 0 2px 0;
+    position: absolute;
+    top:34px;
+    left:0;
+}
+.confirm {
+    clear: both;
+    float: left;
+    margin: 10px 0 0 15px;
+}
