@@ -1,4 +1,4 @@
-Pre Requsites- Install NPM , Node, Angular CLI (7.0)
+Pre Requsites- Install NPM , Node, Angular CLI (6.0)
 
 Download & Unzip the zip file
 open the open project root location in command prompt (eg : cd C:/Users/Desktop/shiping-label-maker)
